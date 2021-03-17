@@ -2,8 +2,10 @@ import * as React from "react";
 import IGlobalNavItem from "./model/IGlobalNavItem";
 import GlobalNavNode from "./GlobalNavNode";
 import GlobalNavProvider from "./provider/GlobalNavProvider";
+import * as $ from "jquery";
 
 require("./globalNavStyles.scss");
+let _image: string = require('../../../Images/Logo.png');
 
 export interface IGlobalNavProps {
   webUrl?: string;
@@ -32,6 +34,21 @@ export default class Header extends React.Component<
   }
 
   public componentDidMount(): void {
+    $('#spCommandBar').hide();
+    var paramVal = this._getParameterValues('Edit');
+    if(paramVal){
+      $('#spCommandBar').show();
+    }else{
+      $('#spCommandBar').hide();
+    }
+    $('#spSiteHeader').hide();
+    $('.webPartContainer').hide();
+    $('.ms-SPLegacyFabricBlock').css({
+      'padding':'2px !important',
+      'margin':'0px !important'
+    })
+    $('.CustomLinks').css('padding-right','880px');
+    //$('.global-nav').parent('div').css('background-color','#3c5399');
     this.globalNavProvider
       .getGlobalNavigation()
       .then(
@@ -48,7 +65,10 @@ export default class Header extends React.Component<
 
   public render(): JSX.Element {
     return (
-      <div className="global-nav">
+      <div className="global-nav row">
+        <span style={{width:'124px'}}>
+          <img style={{width:'80%',paddingLeft:'16px'}} src={_image} alt="Logo"/>
+        </span>
         <ul className="gn-root">
           {this.state.globalNavItems.map(
             (globalNavItem: IGlobalNavItem, index: number) => (
@@ -59,4 +79,13 @@ export default class Header extends React.Component<
       </div>
     );
   }
+  private _getParameterValues(param) {
+    var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('?');
+    for (var i = 0; i < url.length; i++) {
+        var urlparam = url[i].split('=');
+        if (urlparam[0] == param) {
+            return urlparam[1];
+        }
+    }
+}
 }

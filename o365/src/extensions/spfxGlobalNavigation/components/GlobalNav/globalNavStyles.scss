@@ -1,29 +1,37 @@
 // Navigation Colors
 //First Level Navigation
-$navNodeTextColor: #00a0f5;
+$navNodeTextColor: #1e1e1e;
 $navNodeBgColor: #ffffff;
-$navNodeHoverTextColor: #ffffff;
+$navNodeHoverTextColor: #1e1e1e;
 $navNodeHoverBgColor: #00a0f5;
 $navNodeBorderColor: #eeeeee;
 
 //Second+ Level Navigation
 $navNodeChildTextColor: #1e1e1e;
-$navNodeChildBgColor: #ffffff;
+$navNodeChildBgColor:rgb(220, 229, 238);
 $navNodeChildHoverTextColor: #00a0f5;
 $navNodeChildHoverBgColor: #ffffff;
 
 //Drop Down Menu Background
 $navDropDownMenuBgColor: #ffffff;
 // end Navigation Colors
-
+.ms-SPLegacyFabricBlock{
+  padding: 0px;
+  margin: 0px;
+}
+.global-nav:parent{
+  background-color: #3c5399;
+}
 .global-nav {
   position: relative;
   display: inline-block;
   vertical-align: top;
   margin: 0 0 0 25px;
+  border-bottom: 1px solid;
+  border-color: #edebe9;
 
   .gn-icon {
-    padding-left: 10px;
+    width: 1.65rem;
   }
 
   .vpn-icon {
@@ -84,8 +92,9 @@ $navDropDownMenuBgColor: #ffffff;
           text-decoration: none;
         }
         &:hover {
-          color: $navNodeHoverTextColor;
-          background-color: $navNodeHoverBgColor;
+          border-bottom: 2px solid rgb(3, 120, 124);
+          // color: $navNodeHoverTextColor;
+          // background-color: $navNodeHoverBgColor;
         }
 
         //second links
@@ -120,14 +129,14 @@ $navDropDownMenuBgColor: #ffffff;
 
       .td-dropdown-menu {
         position: absolute;
-        margin: -3px;
+        margin: 0px;
         padding: 0;
         min-width: 100%;
         display: none;
         z-index: 999;
-        border: 1px solid $navNodeBorderColor;
+        //border: 1px solid $navNodeBorderColor;
         min-width: 185px;
-        box-shadow: 1px 1px 7px #ccc;
+        //box-shadow: 1px 1px 7px #ccc;
         background-color: $navDropDownMenuBgColor;
       }
 

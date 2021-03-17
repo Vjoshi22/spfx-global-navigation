@@ -37,10 +37,10 @@ export default class GlobalNavNode extends React.Component<
             this.props.globalNavItem.level > 0 && (
               <FontAwesomeIcon icon={faCaretRight} className="gn-icon"></FontAwesomeIcon>
             )}
-          {this.props.globalNavItem.subNavItems &&
+          {/* {this.props.globalNavItem.subNavItems &&
             this.props.globalNavItem.level <= 0 && (
               <FontAwesomeIcon icon={faCaretDown} className="gn-icon"></FontAwesomeIcon>
-            )}
+            )} */}
         </a>
         {this.props.globalNavItem.subNavItems && (
           <ul

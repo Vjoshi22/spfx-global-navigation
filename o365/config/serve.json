@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://ytpl.sharepoint.com/sites/SAPPMO/SitePages/Web-Templates.aspx",
       "customActions": {
         "fddaded9-3740-4471-9010-eddabae67847": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -15,7 +15,7 @@
       }
     },
     "spfxGlobalNavigation": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://ytpl.sharepoint.com/sites/SAPPMO/SitePages/Web-Templates.aspx",
       "customActions": {
         "fddaded9-3740-4471-9010-eddabae67847": {
           "location": "ClientSideExtension.ApplicationCustomizer",
